@@ -74,7 +74,7 @@ export const Certification = () => {
                           alt={cert.title}
                           width={100}
                           height={100}
-                          objectFit="contain"
+                          style={{ objectFit: 'contain' }}
                         />
                       </div>
                     </div>

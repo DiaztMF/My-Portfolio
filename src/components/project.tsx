@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { projectsData } from '@/lib/data';
+import { projects } from '@/lib/data';
 
-type TProject = (typeof projectsData)[number];
+type TProject = (typeof projects)[number];
 
 type TProps = {
   project: TProject;
@@ -28,7 +28,7 @@ const fadeInAnimationVariants = {
 };
 
 export const Project = ({ project, index }: TProps) => {
-  const { image, title, description, technologies, links } = project;
+  const { image, title, description, technologies, githubUrl } = project;
 
   return (
     <motion.div
@@ -42,7 +42,7 @@ export const Project = ({ project, index }: TProps) => {
       className="flex flex-col rounded border p-5 md:w-1/2"
     >
       <Link
-        href={links.github}
+        href={githubUrl}
         aria-label={title}
         target="_blank"
         className="overflow-hidden rounded"
